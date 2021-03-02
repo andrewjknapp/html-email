@@ -1,5 +1,6 @@
 import './App.css';
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import ReactHtmlParser from "react-html-parser";
 
 function App() {
 
@@ -9,14 +10,24 @@ function App() {
     setEmailText(e.target.value);
   }
 
+  useEffect(() => {
+
+  }, [emailText]);
+
   return (
-    <div className="main">
-      <textarea 
-        className="text-entry"
-        onChange={handleTextChange}
-      ></textarea>
-      <p className="display">{emailText}</p>
-    </div>
+    <main className="main">
+      <article>
+        <section>
+          <textarea 
+            className="text-entry"
+            onChange={handleTextChange}
+          ></textarea>
+        </section>
+        <section>
+          <p className="display">{ReactHtmlParser(emailText)}</p> 
+        </section>
+      </article>
+    </main>
   );
 }
 

@@ -1,4 +1,25 @@
 .main {
   background-color: rgb(159, 206, 247);
   height: 100vh;
+  padding: 20px;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+}
+
+section {
+  width: 40vw;
+}
+
+.text-entry, 
+.display {
+  width: 40vw;
+  height: 90vh;
+  resize: none;
+}
+
+.display {
+  background-color: white;
 }
